@@ -14,7 +14,7 @@ export const adminJs = new AdminJS({
 
     //style admin page
     branding:{
-        companyName: 'OneBitFlix',
+        companyName: 'OneBitFlix | Admin',
         logo: '/logoOnebitflix.svg',
         theme: {
             colors: {
