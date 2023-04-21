@@ -10,10 +10,6 @@ const PORT = process.env.PORT || 3000
 
 
 
-
-
-
-
 //UpSERVER-DB
 app.listen(PORT, ()=> {
     sequelize.authenticate().then(() => {
@@ -21,3 +17,4 @@ app.listen(PORT, ()=> {
     })
     console.log(`SERVER START SUCCESSFULY AT PORT: ${PORT}`)
 })
+    
