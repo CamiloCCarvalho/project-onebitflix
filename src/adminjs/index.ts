@@ -5,6 +5,7 @@ import AdminJSExpress from '@adminjs/express' //server
 import AdminJSSequelize from '@adminjs/sequelize' //ORM
 import { sequelize } from  '../database' //DB
 import { adminJsResources } from './resources'
+import { locale } from './locale'
 
 import {User} from '../models/User'
 import bcrypt from 'bcrypt'
@@ -15,7 +16,7 @@ export const adminJs = new AdminJS({
     databases: [sequelize],
     rootPath: '/admin', //route of adm
     resources: adminJsResources, //use into panel adminJS-http
-
+    locale: locale,
 
     //style admin page
     branding:{
