@@ -1,3 +1,5 @@
+// src/adminjs/index.ts
+
 import AdminJS from 'adminjs' //adm
 import AdminJSExpress from '@adminjs/express' //server
 import AdminJSSequelize from '@adminjs/sequelize' //ORM

@@ -1,3 +1,6 @@
+// src/database/index.ts
+
+
 import { Sequelize } from 'sequelize'
 
 export const sequelize = new Sequelize({

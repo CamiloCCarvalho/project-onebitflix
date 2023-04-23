@@ -1,3 +1,5 @@
+// src/server.ts
+
 import express from 'express'
 import { sequelize } from './database'
 import { adminJs, adminJsRouter } from './adminjs'

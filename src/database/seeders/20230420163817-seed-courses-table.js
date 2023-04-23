@@ -1,4 +1,5 @@
 'use strict';
+// src/database/seeders/20230420163817-seed-courses-table.ts
 
 module.exports = {
   async up (queryInterface, Sequelize) {

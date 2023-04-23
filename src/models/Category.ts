@@ -1,3 +1,5 @@
+// src/models/Category.ts
+
 import { Optional, Model, DataTypes } from 'sequelize'
 import { sequelize } from '../database'
 

@@ -1,5 +1,6 @@
-//associations
+// src/models/index.ts
 
+//associations
 import {Category} from './Category'
 import {Course} from './Course'
 import {Episode} from './Episode'
