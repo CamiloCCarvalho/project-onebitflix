@@ -7,7 +7,7 @@ import { sequelize } from  '../database' //DB
 import { adminJsResources } from './resources'
 import { locale } from './locale'
 
-import {User} from '../models/User'
+import { Category, User, Course, Episode } from '../models'
 import bcrypt from 'bcrypt'
 
 AdminJS.registerAdapter(AdminJSSequelize)
@@ -17,7 +17,22 @@ export const adminJs = new AdminJS({
     rootPath: '/admin', //route of adm
     resources: adminJsResources, //use into panel adminJS-http
     locale: locale,
-
+    dashboard: {
+        component: AdminJS.bundle('./components/Dashboard'),
+        handler: async (req, res, context) => {
+            const courses = await Course.count()
+            const episodes = await Episode.count()
+            const category = await Category.count()
+            const standardUsers = await User.count({ where: { role: 'user' } })
+      
+            res.json({
+              'Cursos': courses,
+              'Episódios': episodes,
+              'Categorias': category,
+              'Usuários': standardUsers
+            })
+          },
+    },
     //style admin page
     branding:{
         companyName: 'OneBitFlix | Admin',
