@@ -1,14 +1,15 @@
 import {Response, Request} from 'express'
-import { Category } from '../models'
+import { categoryService } from '../services/categoryService'
+import { getPaginationParams } from '../helpers/getPaginationParams'
 
 export const categoriesController = {
     index: async (req:Request, res:Response) => {
+        const [page, perPage] = getPaginationParams(req.query)
+
         try{
-            const categories = await Category.findAll({
-                order:[['position', 'ASC']],
-                attributes: ['id', 'name', 'position']
-            })
-            return res.json(categories)
+            const paginatedCategories = await categoryService.findAllPaginated(page, perPage)
+            return res.json(paginatedCategories)
+
         } catch (err) {
             if(err instanceof Error) {
                 return res.status(400).json({message: err.message})
@@ -16,4 +17,3 @@ export const categoriesController = {
         }
     }
 }
-    
