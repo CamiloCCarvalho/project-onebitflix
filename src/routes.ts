@@ -5,5 +5,6 @@ import { categoriesController } from './controllers/categoriesController'
 const router = express.Router()
 
 router.get('/categories', categoriesController.index)
+router.get('/categories/:id', categoriesController.show) //define params here
 
 export {router}
