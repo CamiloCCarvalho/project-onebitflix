@@ -10,6 +10,7 @@ router.get('/categories', categoriesController.index)
 router.get('/categories/:id', categoriesController.show) //define params here
 router.get('/courses/featured', coursesController.featured)
 router.get('/courses/newest', coursesController.newest)
+router.get('/courses/search', coursesController.search)
 router.get('/courses/:id', coursesController.show)
 
 
